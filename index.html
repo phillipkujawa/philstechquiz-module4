@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Quiz - Module 4 Assignment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+        }
+
+        h1, h2 {
+            color: #444;
+            text-align: center;
+        }
+
+        #start-btn, #clearbtn, #submit-initials, #retry-btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #start-btn:hover, #clearbtn:hover, #submit-initials:hover {
+            background-color: #0056b3;
+        }
+
+        #question-container, #initials-form, #high-scores {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        #timer {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #high-scores {
+            margin-top: 30px;
+        }
+
+        #initials-input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        
+        #result.correct {
+            color: white; 
+            background-color: #4CAF50;/* Green */
+        }
+
+        #result.incorrect {
+            color: white;
+            background-color: #f44336;/* Red */
+        }
+        li {
+      list-style-type: none;
+    }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Programming Quiz - Module 4 Assignment</h1>
+        <button id="start-btn">Start</button>
+        <button id="retry-btn" style="display: none;">Retry</button>
+        <div id="question-container" style="display:none;"></div>
+        <div id="timer">Time: <span id="time-left">0</span></div>
+        <div id="result"></div>
+        <div id="my-score" style="display:none;">
+            <h2>My Score</h2>
+            <div id="current-score"></div>
+            <button id="submit-score">Submit Score</button>
+        </div>
+        <div id="past-scores" style="display:none;">
+            <h2>Past Scores</h2>
+            <ul id="high-scores-list"></ul>
+            <button id="clearbtn">Clear Scores</button>
+          </div>
+        <div id="initials-form" style="display:none;">
+            <label for="initials-input">Enter your initials for the scoreboard:</label>
+            <input type="text" id="initials-input" maxlength="3" />
+            <button id="submit-initials">Submit</button>
+        </div>
+    </div>
+      
+    <script src="app.js"></script>
+</body>
+</html>
