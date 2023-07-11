@@ -53,7 +53,7 @@ const questions = [
       let finalScore = 0;
       
       startQuizButton.addEventListener('click', startQuiz);
-      
+      //function to start quiz
       function startQuiz() {
         startQuizButton.style.display = 'none';
         questionContainer.style.display = 'block';
@@ -72,7 +72,7 @@ const questions = [
       
         showQuestion();
       }
-      
+      //function to show question
       function showQuestion() {
         const currentQuestion = questions[currentScore];
         questionContainer.innerHTML = `
@@ -82,7 +82,7 @@ const questions = [
           </ul>
         `;
       }
-      
+      //function to submit answer
       function submitAnswer(userAnswer, event) {
         const correctAnswer = questions[currentScore].correctAnswer;
         const targetButton = event.target;
@@ -112,7 +112,7 @@ const questions = [
           endQuiz();
         }
       }
-      
+      //function to end quiz
       function endQuiz() {
         clearInterval(countdown);
         questionContainer.style.display = 'none';
@@ -129,7 +129,7 @@ const questions = [
           startQuiz();
         };
       }
-      
+      //function to reset quiz
       function resetQuiz() {
         currentScore = 0;
         quizTime = 60;
@@ -142,6 +142,7 @@ const questions = [
         retryButton.style.display = 'none';
       }
       
+      //function to store high scores
       submitInitialsBtn.onclick = function () {
         const initials = initialsInput.value.trim();
         if (initials) {
@@ -157,7 +158,7 @@ const questions = [
           alert("Please enter your initials.");
         }
       }
-      
+      //function to show high scores
       function showHighScores() {
         document.getElementById('past-scores').style.display = 'block';
         const storedHighScores = JSON.parse(localStorage.getItem('highScores')) || [];
